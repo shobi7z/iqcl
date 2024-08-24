@@ -9,11 +9,31 @@
             font-family: 'Cairo', sans-serif;
             background: linear-gradient(to right, #74ebd5, #acb6e5);
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
             height: 100vh;
             margin: 0;
             color: #333;
+        }
+        .nav-bar {
+            width: 100%;
+            background-color: #007bff;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        .nav-bar a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
         }
         .converter-container {
             background-color: #fff;
@@ -22,6 +42,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             width: 350px;
             text-align: center;
+            margin: 20px 0;
         }
         .converter-container h2 {
             margin-bottom: 20px;
@@ -79,8 +100,9 @@
     </style>
 </head>
 <body>
-
-<div class="converter-container">
+</div>
+<!-- محتوى الصفحة -->
+<div class="converter-container" id="convert">
     <h2>تحويل الدولار إلى الدينار العراقي</h2>
     <div id="input-fields">
         <div>
@@ -91,7 +113,7 @@
     <button onclick="addNewField()">سعر آخر</button>
     <div class="total-result" id="total-result">المجموع الكلي: 0 دينار</div>
 </div>
-
+</div>
 <script>
     function convertToIQD(inputElement) {
         const dollarAmount = parseFloat(inputElement.value);
